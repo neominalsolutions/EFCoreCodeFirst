@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "SayfaliGetir";
+}
+
+@model List<EFCoreCodeFirst.Entitites.Student>
+
+
+<h1>SayfaliGetir</h1>
+
+<ul>
+  @foreach (var item in Model)
+  {
+    <li>@item.Name @item.SurName</li>
+  }
+</ul>
+
+
+
+<ul class="pagination">
+  @for (int i = 1; i <= ViewBag.ToplamSayfaSayisi; i++)
+  {
+    <li class="page-item">
+      <a asp-route="ogrenciSayfaRoute" asp-route-currentPage="@i" asp-route-limit="2" class="page-link">@i</a>
+    </li>
+  }
+ 
+</ul>
