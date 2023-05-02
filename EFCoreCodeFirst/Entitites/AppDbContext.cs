@@ -18,6 +18,8 @@ namespace EFCoreCodeFirst.Entitites
 
     public DbSet<StudentDepartment> StudentDepartments { get; set; }
 
+    public DbSet<Lesson> Lessons { get; set; }
+
     // sanki bir tablo gibi tanımladık
     public DbSet<StudentDepartmentView> StudentDepartmentViews { get; set; }
 
@@ -32,6 +34,8 @@ namespace EFCoreCodeFirst.Entitites
 
       modelBuilder.ApplyConfiguration(new StudentConfiguration());
       modelBuilder.ApplyConfiguration(new StudentDepartmentConfiguration());
+      modelBuilder.ApplyConfiguration(new LessonConfiguration());
+
 
       base.OnModelCreating(modelBuilder);
     }

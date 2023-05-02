@@ -22,6 +22,10 @@ namespace EFCoreCodeFirst.Entitites
     // navigation property Ogrencinin Bolum Bilgisi
     public StudentDepartment Department { get; set; }
 
+    // Öğrenicinin dersleri
+    public List<Lesson> Lessons { get; set; }
+
+
     public Student()
     {
       Id = Guid.NewGuid().ToString();

@@ -168,6 +168,14 @@ namespace EFCoreCodeFirst.Controllers
       var o16 = await dbContext.Students.Include(x => x.Department).OrderBy(x => x.Name).Skip(2).Take(3).ToListAsync();
 
 
+
+      // fizik dersindeki öğrencileri getiren sorgu
+      var s1 = (await dbContext.Lessons.Include(x => x.Students).FirstOrDefaultAsync(x => x.Name == "Matematik")).Students.ToList();
+
+      // 03 nolu öğrencinin girdiği dersler
+      var l1 = (await dbContext.Students.Include(x => x.Lessons).FirstOrDefaultAsync(x => x.Number == "03")).Lessons.ToList();
+
+
       return View();
     }
 
